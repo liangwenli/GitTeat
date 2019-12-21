@@ -6,7 +6,6 @@ import router from "./router/index.js";
 import axios from "axios";
 import store from "./store/index.js";
 
-
 Vue.use(ElementUI);
 Vue.config.productionTip = false;
 Vue.prototype.$axios = axios;

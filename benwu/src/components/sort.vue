@@ -1,14 +1,19 @@
 // 分类
 <template>
-  <h1 @click="goto(id)">sort</h1>
+  <h1 @click="goto()">sort</h1>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      id: 9
+    };
+  },
   components: {},
   methods: {
-    goto(id) {
-      this.$router.push({ path: "/detailPages/" + id });
+    goto() {
+      this.$router.push({ path: "/detailPages/" + this.id });
     }
   }
 };

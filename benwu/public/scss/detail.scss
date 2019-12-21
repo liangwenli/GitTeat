@@ -234,6 +234,7 @@
         width: 100%;
         padding: .12963rem 0;
         padding-right: .222222rem;
+        z-index: 3 !important;
 
         .van-icon {
             text-align: center;
@@ -290,7 +291,7 @@
         width: 100%;
         margin-right: .277778rem;
 
-        z-index: 3 !important;
+        z-index: 4 !important;
 
 
         .sku-h {
@@ -342,7 +343,6 @@
             margin-bottom: .255556rem;
             margin-right: .740741rem;
 
-            span {}
 
             .num {
 

@@ -1,21 +1,13 @@
 <template>
   <div id="app">
     <el-container>
-      <app-header
-        :currentIndex="currentIndex"
-        :tabName="tabName"
-        v-show="currentIndex != 3"
-      ></app-header>
+      <app-header v-show="this.$store.state.path.headerShow.includes(this.$route.path)"></app-header>
 
       <el-main>
         <router-view />
       </el-main>
 
-      <app-footer
-        :currentIndex="currentIndex"
-        :tabName="tabName"
-        @now="changeIndex"
-      ></app-footer>
+      <app-footer v-show="this.$store.state.path.footerShow.includes(this.$route.path)"></app-footer>
     </el-container>
   </div>
 </template>
@@ -26,23 +18,10 @@ import appFooter from "./components/appFooter.vue";
 
 export default {
   name: "app",
-  data: function() {
-    return {
-      tabName: ["首页", "分类", "购物车", "客服"],
-      indexName: ["home", "sort", "cart", "center"],
-      currentIndex: 0,
-      currentComponent: "home"
-    };
+  data: function () {
+    return {};
   },
   methods: {
-    //改变当前页
-    changeIndex(index) {
-      if (this.currentIndex != index) {
-        this.$router.push("/" + this.indexName[index]);
-        this.currentIndex = index;
-        this.currentComponent = this.indexName[index];
-      }
-    }
   },
   components: {
     appHeader,

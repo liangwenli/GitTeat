@@ -2,7 +2,7 @@
 <template>
   <el-header height="1.175926rem">
     <span class="el-icon-shopping-bag-2"></span>
-    <h2>{{tabName[currentIndex]}}</h2>
+    <h2>{{this.$route.name}}</h2>
     <span class="el-icon-chat-dot-round"></span>
   </el-header>
 </template>
@@ -15,7 +15,11 @@ export default {
     return {
     }
   },
-  props: ['currentIndex', 'tabName'],
+  computed: {
+    activeIndex () {
+      return this.$store.state.path.currntIndex;
+    }
+  },
   components: {
 
   }

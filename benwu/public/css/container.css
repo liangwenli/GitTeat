@@ -34,8 +34,13 @@
 .el-footer .active {
   color: #5494eb;
 }
-.footer-link {
+.link-box {
   width: 25%;
+  height: 100%;
+}
+.footer-link {
+  height: 100%;
+  display: block;
   text-align: center;
   font-size: 0.314815rem;
   color: #aeaeae;

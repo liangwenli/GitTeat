@@ -5,6 +5,7 @@ import index from "../components/index.vue";
 import sort from "../components/sort.vue";
 import cart from "../components/cart.vue";
 import center from "../components/center.vue";
+import login from "../components/login.vue";
 import detailPages from "../components/detailPages.vue";
 
 Vue.use(VueRouter);
@@ -13,7 +14,7 @@ let router = new VueRouter({
   routes: [
     //首页
     {
-      name: "home",
+      name: "首页",
       path: "/home", //当浏览器地址为/home时，显示Home组件的内容
       component: index
     },
@@ -23,7 +24,7 @@ let router = new VueRouter({
     },
     //分类
     {
-      name: "sort",
+      name: "分类",
       path: "/sort",
       component: sort
     },
@@ -34,22 +35,28 @@ let router = new VueRouter({
     },
     //购物车
     {
-      name: "cart",
+      name: "购物车",
       path: "/cart",
       component: cart
     },
     //个人中心
     {
-      name: "center",
+      name: "客服",
       path: "/center",
       component: center
+    },
+    //登录
+    {
+      name: "登录",
+      path: "/login",
+      component: login
     }
   ]
 });
 
 // 全局路由守卫
 router.beforeEach(function (to, from, next) {
-  window.console.log("index.beforeEach", to);
+  // window.console.log("index.beforeEach", to);
   // 在全局路由守卫beforeEach中进行页面权限访问控制
   // 先判断目标路由是否需要鉴权
   if (to.meta.requiresAuth) {
